@@ -11,11 +11,13 @@ export const initialState:LoginState = {
 
 export const LoginReducer = createReducer(
     initialState,
-    on(logIn,(state,{loginProps})=>{
+    on(logIn,(state,{username,password})=>{
+        sessionStorage.setItem("user",username)
+        sessionStorage.setItem("pass",password)
         return {
             ...state,
-            username: loginProps.nombre,
-            password: loginProps.constrasenia
+            username: username,
+            password: password
         }
     })
 )

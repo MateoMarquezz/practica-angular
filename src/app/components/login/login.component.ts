@@ -7,6 +7,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { AuthService } from '../../services/auth.service';
+import { Store } from '@ngrx/store';
+import { AppState } from '../../context/store/app.state';
+import { logIn } from '../../context/actions/login.actions';
 
 
 @Component({
@@ -17,12 +20,13 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  constructor(private authService:AuthService){}
+  constructor(private store:Store<AppState>){}
   Login(){
-    this.authService.Login().subscribe(
-      (data:any)=>{
-        console.log(data)
-      }
-    )
+    this.store.dispatch(logIn({username:"test",password:"test2"}))
+    // this.authService.Login().subscribe(
+    //   (data:any)=>{
+    //     console.log(data)
+    //   }
+    // )
   }
 }
