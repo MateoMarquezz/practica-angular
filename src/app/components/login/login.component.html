@@ -1,0 +1,19 @@
+<div class="loginCard">
+    <h1>GESTOR FRS</h1>
+    <form class="loginCard-Form">
+                <mat-form-field class="Form-input-user">
+                    <mat-label>Usuario</mat-label>
+                    <input matInput>
+                    <mat-icon class="Form-icon-user">person</mat-icon>
+                  </mat-form-field>
+                <mat-form-field class="Form-input-pass">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput>
+                    <mat-icon  class="Form-icon-pass">lock</mat-icon>
+                </mat-form-field>
+            <div class="Form-subContainer">
+                <mat-checkbox color="primary">Guardar contraseña</mat-checkbox>
+                <button mat-raised-button (click)="Login()">Iniciar Sesion</button>
+            </div>
+        </form>
+</div>
