@@ -12,3 +12,5 @@ import { LoginComponent } from './components/login/login.component';
 export class AppComponent {
   title = 'practice';
 }
+
+var agrego = 0; 
